@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cake Ordering Web App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🎂 Cake Delight</h1>
+  </header>
+
+  <section class="order">
+    <h2>Order Your Favorite Cake</h2>
+    <form id="cakeForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required>
+
+      <label for="cake">Select Cake:</label>
+      <select id="cake" required>
+        <option value="">Choose...</option>
+        <option>Chocolate Cake</option>
+        <option>Vanilla Cake</option>
+        <option>Strawberry Cake</option>
+      </select>
+
+      <label for="quantity">Quantity:</label>
+      <input type="number" id="quantity" min="1" required>
+
+      <button type="submit">Place Order</button>
+    </form>
+
+    <p id="output"></p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
