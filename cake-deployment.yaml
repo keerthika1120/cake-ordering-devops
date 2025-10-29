@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cake-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cake-app
+  template:
+    metadata:
+      labels:
+        app: cake-app
+    spec:
+      containers:
+      - name: cake-container
+        image: urk22cs1120/cakeapp:v1
+        ports:
+        - containerPort: 80

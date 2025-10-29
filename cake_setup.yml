@@ -1,0 +1,27 @@
+---
+- name: Setup Cake Ordering Website
+  hosts: local
+  become: yes
+  tasks:
+    - name: Update packages
+      ansible.builtin.apt:
+        update_cache: yes
+
+    - name: Install Node.js and npm
+      ansible.builtin.apt:
+        name:
+          - nodejs
+          - npm
+        state: present
+
+    - name: Create project folder
+      ansible.builtin.file:
+        path: /home/keerthika/cake_ordering
+        state: directory
+
+    - name: Copy Cake Ordering project files
+      ansible.builtin.copy:
+        src: /mnt/d/CakeOrderingSystem/
+        dest: /home/keerthika/cake_ordering/
+
+
